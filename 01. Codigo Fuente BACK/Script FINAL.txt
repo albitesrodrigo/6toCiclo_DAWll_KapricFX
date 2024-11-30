@@ -1,0 +1,106 @@
+-- borra la bd si existe
+DROP DATABASE IF EXISTS ventas;
+-- creamos la bd
+CREATE DATABASE ventas;
+-- activamos la bd
+USE ventas;
+
+-- Insert's tb_categoria
+insert into tb_categoria (id_categoria,des_categoria) values (null,'Jugos');
+insert into tb_categoria (id_categoria,des_categoria) values (null,'Res');
+insert into tb_categoria (id_categoria,des_categoria) values (null,'Pollo');
+insert into tb_categoria (id_categoria,des_categoria) values (null,'Salchipapas');
+insert into tb_categoria (id_categoria,des_categoria) values (null,'Club House');
+insert into tb_categoria (id_categoria,des_categoria) values (null,'Piqueos');
+insert into tb_categoria (id_categoria,des_categoria) values (null,'Vegetarianos');
+insert into tb_categoria (id_categoria,des_categoria) values (null,'Combinados');
+insert into tb_categoria (id_categoria,des_categoria) values (null,'Especiales');
+insert into tb_categoria (id_categoria,des_categoria) values (null,'Combos');
+-- testeamos 
+select *from tb_categoria;
+
+
+-- Insert's tb_estado
+insert into tb_estado (id_estado,des_estado) values (null,'Activo');
+insert into tb_estado (id_estado,des_estado) values (null,'Inactivo');
+-- testeamos 
+select *from tb_estado;
+
+
+-- Insert's tb_rol
+insert into tb_rol (id_rol,des_rol) values (null,'Administrador');
+insert into tb_rol (id_rol,des_rol) values (null,'Supervisor');
+insert into tb_rol (id_rol,des_rol) values (null,'Asesor');
+-- testeamos 
+select *from tb_rol;
+
+
+-- Insert's tb_tipodoc
+insert into tb_tipodoc (id_tipo,des_tipo) values (null,'D.N.I.');
+insert into tb_tipodoc (id_tipo,des_tipo) values (null,'Pasaporte');
+insert into tb_tipodoc (id_tipo,des_tipo) values (null,'C.E.');
+-- testeamos 
+select *from tb_tipodoc;
+
+
+-- Insert's tb_cliente
+insert into tb_cliente (id_cliente,ape_paterno,ape_materno,nombre,correo,direccion,num_documento,id_tipo) values (null,'Bautista','Albites','Brayan','albitesrodrigo@gmail.com','Surquillo','81434345',1);
+insert into tb_cliente (id_cliente,ape_paterno,ape_materno,nombre,correo,direccion,num_documento,id_tipo) values (null,'Postillos','Pedroso','Samme','sammepostillos@gmail.com','Huaral','11223344',1);
+insert into tb_cliente (id_cliente,ape_paterno,ape_materno,nombre,correo,direccion,num_documento,id_tipo) values (null,'Cuadros','Paredes','Lucero','lucerotlv@gmail.com','San Martin de Porres','147896325',1);
+-- testeamos 
+select *from tb_cliente;
+
+
+-- Insert's tb_producto
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Chicha Morada', 60,8.50,1);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Jugo de Fresa', 58,8.90,1);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Jugo de Mango', 56,8.40,1);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Jugo de Melón', 62,7.80,1);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Jugo de Papaya', 64,7.50,1);
+
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Hawaii', 72,17.50,2);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Queso Tocino', 76,18.40,2);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Royal', 74,16.30,2);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Simple', 78,18.50,2);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Lomo Saltado', 61,19.80,2);
+
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Filete de Pollo', 58,18.70,3);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Pollo Crispy', 63,18.70,3);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Pollo Naed', 67,18.70,3);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Pollo Royal', 61,18.70,3);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Pollo Oriental', 55,16.40,3);
+
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Chorizo Tunchi', 59,15.40,4);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Frankfurt', 42,15.30,4);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'La Ñañita', 44,16.70,4);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Salchi Naed', 49,17.90,4);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Salchi Chicken', 37,16.40,4);
+
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Bondiola Ahumada', 41,12.40,5);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Pavo al Horno', 35,13.50,5);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Pollo Filete', 44,13.80,5);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Mixto', 41,14.50,5);
+
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Alitas Naed', 51,18.50,6);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Chicken Finger', 59,18.20,6);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Papas Crocantes', 41,12.50,6);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Alitas BBQ', 47,19.50,6);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Papas Veggie', 61,15.50,6);
+
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Garbanzos', 51,18.50,7);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Lay', 59,18.20,7);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Lentejas', 41,12.50,7);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Soya Mar', 47,19.50,7);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Quinua', 61,15.50,7);
+
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Limonada Estilo Especial', 61,15.50,8);
+
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Cecina', 16,18.50,9);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Matador', 24,22.70,9);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Bandiola Ahumada', 28,18.70,9);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Cordon Blue', 34,21.50,9);
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Chicken Brasa', 27,19.90,9);
+
+insert into tb_producto(id_producto,nom_producto, stock, precio,id_categoria  ) values (null,'Combo l', 14,47.50,10);
+-- testeamos 
+select *from tb_producto;
